@@ -7,6 +7,7 @@ for (let i=0;i<operationButtons.length;i++){
 
 let calc__display = document.querySelector('.calc__display')/* .addEventListener("change", checkForLetters) */; 
 let calc_history = document.querySelector('.calc__history');
+calc__display.addEventListener('keyup', (e) => validation(calc__display.value))   //changes
 
 let displayValue = '';
 let firstNum = '';
@@ -24,6 +25,16 @@ function checkForLetters (){
 if (Number(a)===Number){console.log("Number")}
 else {console.log("Not a Number")}
  */
+}
+
+function validation(v){   //changes
+let value = v.split("")
+let lastNum = value.pop()
+let regex = new RegExp('^[0-9.]$')
+  if((regex.test(lastNum)) === true){
+    value.push(lastNum)
+  }
+  calc__display.value = value.join("")
 }
  
 
