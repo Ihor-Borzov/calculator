@@ -32,7 +32,7 @@ function onKeyboardButtonClick(even) {
         let a = calc__display.value.split("");
         let firstDot = a.indexOf('.');
         if (firstDot == 0 && calc__display.value.length == 1) { calc__display.value = "0."; a = calc__display.value.split(""); firstDot = a.indexOf('.'); }
-        else if (firstDot == 0 || calc__display.value.length !== 1) { a.unshift("0"); firstDot = firstDot + 1; }
+       // else if (firstDot == 0 || calc__display.value.length !== 1) { a.unshift("0"); firstDot = firstDot + 1; }
         for (let j = ++firstDot; j <= a.length - 1;) {
             if (a[j] == ".") { a.splice(j, 1) }                   // if we find any extra dots we remove them from the array
             else { calc__display.value = a.join(""); break; }
