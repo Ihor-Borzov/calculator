@@ -1,0 +1,140 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal; }
+
+body {
+  padding: 0;
+  margin: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#00aaff), to(#00ff6c));
+  background: -webkit-linear-gradient(left, #00aaff, #00ff6c);
+  background: -o-linear-gradient(left, #00aaff, #00ff6c);
+  background: linear-gradient(to right, #00aaff, #00ff6c); }
+
+.calc__container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.calc__body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (85px)[4];
+  grid-template-columns: repeat(4, 85px);
+  -ms-grid-rows: minmax(120px, auto) (90px)[5];
+  grid-template-rows: minmax(120px, auto) repeat(5, 90px);
+  border: 4px solid white;
+  gap: 5px;
+  padding: 0 5px 5px 5px;
+  border-radius: 30px;
+  -webkit-box-shadow: inset 5px 5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, 0.16);
+  box-shadow: inset 5px 5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, 0.16);
+  background: -webkit-gradient(linear, left top, right top, from(#00aaff), to(#00ff6c));
+  background: -webkit-linear-gradient(left, #00aaff, #00ff6c);
+  background: -o-linear-gradient(left, #00aaff, #00ff6c);
+  background: linear-gradient(to right, #00aaff, #00ff6c); }
+
+.calc__output {
+  grid-column: 1/-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 5px 10px 0px 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: white;
+  border-radius: 30px; }
+  .calc__output .calc__history {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 20px;
+    background-color: black;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: end;
+    padding: 2px 5px; }
+  .calc__output .calc__display {
+    color: black;
+    font-size: 25px;
+    padding: 0 10px;
+    background: transparent;
+    -webkit-box-shadow: inset 5px 5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, 0.16);
+    box-shadow: inset 5px 5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, 0.16);
+    border: 4px solid white;
+    border-radius: 30px;
+    text-align: end;
+    width: 100%;
+    height: 70px;
+    word-wrap: break-word;
+    word-break: break-all; }
+    .calc__output .calc__display:focus {
+      outline: none; }
+
+.calc__button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 30px;
+  -webkit-box-shadow: inset 5px 5px 12px #ffffff;
+  box-shadow: inset 5px 5px 12px #ffffff; }
+  .calc__button:hover {
+    background-color: rgba(255, 255, 255, 0.9); }
+  .calc__button_equal {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 2;
+    grid-row: 5/7;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+    grid-column: 4/5;
+    background-color: #E16610; }
+  .calc__button_C {
+    position: relative; }
+    .calc__button_C::before {
+      content: "Esc";
+      font-size: 0.5em;
+      position: absolute;
+      top: 66%; }
+
+@media only screen and (max-width: 700px) {
+  .calc__body {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: minmax(120px, 200px) (1fr)[5];
+    grid-template-rows: minmax(120px, 200px) repeat(5, 1fr);
+    border: none;
+    background: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    max-height: 100vh;
+    min-height: 100vh;
+    margin-bottom: 20px; }
+  .calc__output {
+    padding: 5px 10px 0px 10px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .calc__output .calc__history {
+      width: 90%;
+      margin: 20px auto;
+      height: 40px; }
+    .calc__output .calc__display {
+      background: transparent; } }
